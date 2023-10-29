@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Formulario</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='form.css') }}">
+</head>
+<body>
+    <form action="/process" method="post">
+        <label for="name">Nombre:</label>
+        <input type="text" id="name" name="name" required><br>
+
+        <label for="country">País:</label>
+        <select id="country" name="country" required>
+            <option value="cl">Chile</option>
+            <option value="usa">Estados Unidos</option>
+            <option value="uk">Reino Unido</option>
+            <option value="france">Francia</option>
+            <option value="germany">Alemania</option>
+            <option value="spain">España</option>
+            <option value="italy">Italia</option>
+            
+        </select><br>
+
+        <label for="language">Idioma:</label>
+        <select id="language" name="language" required>
+            <option value="spanish">Español</option>
+            <option value="english">Inglés</option>
+            <option value="french">Francés</option>
+            <option value="german">Alemán</option>
+            <option value="italian">Italiano</option>
+            <option value="portuguese">Portugués</option>
+        </select><br>
+
+        <label></label>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="option1" name="preference1" value="option1">
+            <label class="form-check-label" for="option1">Opción 1</label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="option2" name="preference2" value="option2">
+            <label class="form-check-label" for="option2">Opción 2</label>
+        </div>
+        </div>
+        <br>
+
+        <label for="comment">Comentario:</label><br>
+        <textarea id="comment" name="comment" rows="4" cols="50" required></textarea><br>
+
+        <input type="submit" value="Enviar">
+    </form>
+</body>
+</html>

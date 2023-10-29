@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Resultado</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='result.css') }}">
+</head>
+<body>
+    <div class="result">
+        <h2>Información enviada:</h2>
+        <div class="result-info">
+            <table class="table table-striped">
+                <tr>
+                    <th>Nombre</th>
+                    <td>{{ session['name'] }}</td>
+                </tr>
+                <tr>
+                    <th>País</th>
+                    <td>{{ session['country'] }}</td>
+                </tr>
+                <tr>
+                    <th>Idioma</th>
+                    <td>{{ session['language'] }}</td>
+                </tr>
+                <tr>
+                    <th>Comentario</th>
+                    <td>{{ session['comment'] }}</td>
+                </tr>
+                <tr>
+                    <th>Preferencias</th>
+                    <td>
+                        {% if 'preference1' in session %}
+                            Opción 1,
+                        {% endif %}
+                        {% if 'preference2' in session %}
+                            Opción 2,
+                        {% endif %}
+                        {% if 'preference3' in session %}
+                            Opción 3
+                        {% endif %}
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
